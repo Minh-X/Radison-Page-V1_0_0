@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+:root {
+  --font-family: "Outfit", sans-serif;
+  --body-themes: black;
+  --font-size-heading-XXL: 3.75rem;
+  --font-size-heading-XL: 3.125rem;
+  --font-size-heading-X: 2.5rem;
+  --font-size-title: 1.375rem;
+  --font-size-content-X: 1.125rem;
+  --font-size-content-XS: 1rem;
+  --font-weight-H: 700;
+  --font-weitht-M: 500;
+  --font-weight-R: 400;
+  --font-weitht-L: 300;
+  --btn-color: #512feb;
+}
+header {
+  width: 100%;
+}
+.navigation {
+  width: 100%;
+  min-height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation__container {
+  width: 80%;
+  height: 50%;
+  background: rgba(143, 127, 127, 0);
+  border-radius: 0.2rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.3px);
+  -webkit-backdrop-filter: blur(4.3px);
+  border: 1px solid rgba(143, 127, 127, 0.39);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0 0.5rem 0;
+}
+.header__icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.header__icon img {
+  height: 2rem;
+}
+.header__icon p {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weitht-M);
+  font-family: var(--font-family);
+}
+.header__content {
+  display: flex;
+  gap: 1rem;
+}
+nav a {
+  font-family: var(--font-family);
+  font-weight: var(--font-weitht-M);
+  font-size: var(--font-size-content-XS);
+  text-decoration: none;
+  padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+  transition: all 0.25s linear;
+  border-radius: 0.2rem;
+}
+nav a:hover {
+  background-color: #1a1a1a;
+}
+.header__btn {
+  overflow: hidden;
+  width: 9rem;
+  height: 2.5rem;
+  background: var(--btn-color);
+  border-radius: 0.2rem;
+  transition: all 0.25s linear;
+  font-family: var(--font-family);
+  font-weight: var(--font-weitht-M);
+  font-size: var(--font-size-content-XS);
+}
+.header__btn:hover {
+  scale: 1.02;
+  box-shadow: var(--btn-color) 0px 0px 0px 2px,
+    var(--btn-color) 0px 4px 6px -1px, var(--btn-color) 0px 1px 0px inset;
+}
+.header__btn:hover .btn__header--content {
+  transform: translatey(-100%);
+}
+.header__btn:active {
+  background-color: red;
+}
+.btn__header--content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s linear;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--body-themes);
+}
+[data-aos] {
+  visibility: hidden;
+}
+[data-aos].animate__animated {
+  visibility: visible;
+}
