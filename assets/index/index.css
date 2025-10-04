@@ -48,6 +48,7 @@ header {
   justify-content: space-between;
   padding: 0.5rem 0 0.5rem 0;
   transition: all 0.2s linear;
+  animation: resizeSmaller 2s linear;
 }
 .header__icon {
   display: flex;
@@ -172,13 +173,13 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 7rem;
 }
 .carousel__showing {
   width: 80%;
   overflow: hidden;
   display: flex;
   position: relative;
-  margin-top: 7rem;
 }
 .carousel__showing::before {
   content: "";
@@ -187,9 +188,8 @@ nav a:hover {
   position: absolute;
   left: 0;
   top: 0;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.4), rgb(0, 0, 0));
-  backdrop-filter: blur(12px); /* Increased blur */
-  -webkit-backdrop-filter: blur(12px);
+  background-color: black;
+  mask-image: linear-gradient(to right, black 70%, transparent 100%);
   z-index: 2;
 }
 .carousel__showing::after {
@@ -199,9 +199,8 @@ nav a:hover {
   position: absolute;
   right: 0;
   top: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgb(0, 0, 0));
-  backdrop-filter: blur(12px); /* Increased blur */
-  -webkit-backdrop-filter: blur(12px);
+  background-color: black;
+  mask-image: linear-gradient(to left, black 70%, transparent 100%);
   z-index: 2;
 }
 .carousel__group {
@@ -221,7 +220,96 @@ nav a:hover {
 .carousel__items i {
   font-size: var(--font-size-heading-X);
 }
-
+main {
+  width: 100%;
+}
+.introduce {
+  width: 100%;
+  padding-top: 10rem;
+  display: flex;
+  justify-content: center;
+}
+.introduce__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.introduce__content .btn__title--noactive {
+  width: 7rem;
+  gap: 0;
+}
+.introduce__text{
+  width: 45%;
+  font-family: var(--font-family);
+  font-size: var(--font-size-heading-X);
+  font-weight: var(--font-weight-H);
+  text-align: center;
+}
+.progress {
+  padding-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.progress .btn__title--noactive {
+  width: 6rem;
+  gap: 0;
+}
+.progress__content p:first-child {
+  font-family: var(--font-family);
+  font-size: var(--font-size-heading-X);
+  font-weight: var(--font-weight-H);
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.progress__content p:last-child {
+  font-family: var(--font-family);
+  font-size: var(--font-size-content-X);
+  font-weight: var(--font-weight-M);
+  text-align: center;
+}
+.progress__card {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+.progress__card--item {
+  width: 20%;
+  padding: 1rem 1rem 1rem 1rem;
+  background: rgba(53, 50, 50, 0.5);
+  border-radius: 0.2rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.progress__card--image {
+  width: 100%;
+  border-radius: 0.2rem;
+  overflow: hidden;
+}
+.progress__card--image img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  object-position: center;
+}
+.progress__card--content {
+  width: 100%;
+  padding-top: 0.5rem;
+}
+.progress__card--content p:first-child {
+  font-family: var(--font-family);
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-M);
+  padding-bottom: 0.5rem;
+}
+.progress__card--content p:last-child {
+  font-family: var(--font-family);
+  font-size: var(--font-size-content-XS);
+  font-weight: var(--font-weight-R);
+}
 @keyframes carousel {
   from {
     transform: translateX(0);
