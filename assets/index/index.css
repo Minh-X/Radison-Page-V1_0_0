@@ -901,8 +901,53 @@ main {
   gap: 1rem;
   padding: 1rem 0 0 0;
 }
-.plans__card .plans__btn--go{
+.plans__card .plans__btn--go {
   width: 100%;
+}
+.faqs {
+  width: 100%;
+}
+.faqs__container {
+  width: 50%;
+  min-height: 10rem;
+}
+.faqs__box {
+  padding-top: 1rem;
+}
+.question {
+  font-family: var(--font-family);
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-H);
+  overflow: hidden;
+  background: rgba(53, 50, 50, 0.5);
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 1rem 1rem 1rem 1rem;
+  transition: all 0.25s linear;
+}
+.answer {
+  background: rgba(53, 50, 50, 0.5);
+  border-radius: 0 0 0.5rem 0.5rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.25s cubic-bezier(1, 0, 0.25, 0.55);
+}
+.answer p {
+  font-family: var(--font-family);
+  font-size: var(--font-size-content-X);
+  font-weight: var(--font-weight-M);
+}
+.open {
+  max-height: 20rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+.openChange {
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 @keyframes progress {
   from {
@@ -969,6 +1014,55 @@ main {
   .central__meeting {
     grid-column: 1 / 5;
     grid-row: 1 / 4;
+  }
+  .progress__card--item {
+    width: 30%;
+  }
+}
+@media (max-width:900px){
+  .header__content {
+    display: none;
+  }
+  .introduce__content {
+    width: 100%;
+  }
+  .introduce__text {
+    width: 100%;
+  }
+  .progress__card {
+    flex-direction: column;
+    align-self: center;
+  }
+  .progress__card--item {
+    width: 100% ;
+  }
+}
+@media(max-width: 600px){
+  .hero__content-center {
+    width: 100%;
+    font-size: var(--font-size-content-XS);
+  }
+  .carousel__showing {
+    width: 100%;
+  }
+  .carousel__showing::after ,.carousel__showing::before{
+    width: 5rem;
+  }
+  .services__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .card__benefits--container {
+    flex-direction: column;
+  }
+  .benefit__card {
+    width: 100%;
+  }
+  .plans--content {
+    flex-direction: column;
+  }
+  .faqs__container {
+    width: 80%;
   }
 }
 [data-aos] {

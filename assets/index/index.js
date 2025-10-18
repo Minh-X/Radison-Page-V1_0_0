@@ -3,6 +3,8 @@ const costChange = document.querySelectorAll(".cost");
 const toggleToMonthly = document.querySelector(".monthy__selection")
 const toggleToBack = document.querySelector(".annually__selection")
 const backgroundToggled = document.querySelector(".background__selection")
+const questionToggle = document.querySelectorAll(".question")
+const answerToggle = document.querySelectorAll(".answer")
 function userNameChangeColor() {
   for (let i = 0; i < userName.length; i++) {
     const r = Math.floor(Math.random() * 255);
@@ -26,3 +28,9 @@ toggleToBack.addEventListener("click",function(e){
     e.textContent = "$480"
   })
 })
+for(let i = 0 ; i < questionToggle.length ; i++){
+  questionToggle[i].addEventListener("click",function(){
+    answerToggle[i].classList.toggle("open")
+    questionToggle[i].classList.toggle("openChange")
+  })
+}
